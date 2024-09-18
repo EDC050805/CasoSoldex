@@ -48,8 +48,8 @@
     <Compile Include="Ensamblaje.cs" />
     <Compile Include="ListaCircularRevRep.cs" />
     <Compile Include="ListaDobleDesarme.cs" />
-    <Compile Include="ListaEnsamblaje.cs" />
-    <Compile Include="ListaSimpleArribo.cs" />
+    <Compile Include="ListaSimpleEnsamblaje.cs" />
+    <Compile Include="PilaArribo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RevisionReparacion.cs" />

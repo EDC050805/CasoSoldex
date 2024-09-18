@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CasoSoldex
 {
-    //Creación de las operaciones que ejecutará la lista "ListaEnsamblaje"
-    internal class ListaEnsamblaje
+    //Creación de las operaciones que ejecutará la lista "ListaSimpleEnsamblaje"
+    internal class ListaSimpleEnsamblaje
     {
     }
 }
