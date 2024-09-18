@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arribo.cs" />
+    <Compile Include="Desarme.cs" />
+    <Compile Include="Ensamblaje.cs" />
+    <Compile Include="ListaCircularRevRep.cs" />
+    <Compile Include="ListaDobleDesarme.cs" />
+    <Compile Include="ListaEnsamblaje.cs" />
+    <Compile Include="ListaSimpleArribo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevisionReparacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
