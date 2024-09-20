@@ -12,8 +12,11 @@ namespace CasoSoldex
         //Instanciamos las listas para poder usar sus funciones
         public static ListaSimpleEnsamblaje ListEns = new ListaSimpleEnsamblaje();
         public static PilaArribo PilaA = new PilaArribo(20);
+        public static ListaDobleDesarme ListDes = new ListaDobleDesarme();
         public static int contador = 0;
+        public static int contador1 = 0;
         public int Contador { get => contador; set => contador = value; } //Propiedad de acceso de otras clases al contador
+        public int Contador1 { get => contador; set => contador = value; } //Propiedad de acceso de otras clases al contador1
         static void Main(string[] args)
         {
             int G6_opc = 0;
@@ -64,8 +67,43 @@ namespace CasoSoldex
                         break;
 
                     case 2: //Va al menú de "Desarme"
-                        G6_opc = Menu("Desarme", 2);
-                        break;
+                        do
+                        {
+                            G6_opc = Menu("Desarme", 2);
+                            switch (G6_opc)
+                            {
+                                case 1: //Guarda un dato
+                                    Encabezado3erN("Desarme");
+                                    Console.Write(" Ingrese el operario a agregar: ");
+                                    int operario = int.Parse(Console.ReadLine());
+                                    if (operario == 0) { break; } //Si colocamos "0" salimos del menú
+                                    Console.Write("\n Ingrese el tiempo de servicio a agregar: ");
+                                    int tiemServ = int.Parse(Console.ReadLine());
+                                    contador1 += 1;
+                                    ListDes.insertaAlFinalLD(contador1, operario, tiemServ);
+                                    break;
+
+                                case 2: //Mostrar datos
+                                    ListDes.mostrarListaDesarme();
+
+                                    //Si la lista tiene valores entonces se pulsa cualquier tecla para salir
+                                    if (ListEns.ListaEnsamblaje != null)
+                                    {
+                                        Console.Write(" ---------------------------------------\n Pulse cualquier tecla para regresar...");
+                                        Console.ReadKey();
+                                    }
+                                    break;
+
+                                case 3: //Actualizar datos
+                                    ListEns.ActualizarMinEnsamblaje();
+                                    break;
+
+                                case 4: //Eliminar datos
+                                    ListEns.EliminarMinEnsamblaje();
+                                    break;
+                            }
+                        } while (G6_opc != 5);
+                break;
 
                     case 3: //Va al menú de "Revisión y Reparación"
                         G6_opc = Menu("Revisión y Reparación", 2);
